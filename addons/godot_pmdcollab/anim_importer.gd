@@ -23,7 +23,7 @@ func _get_preset_name(preset_index: int) -> String:
 	return "Default"
 
 func _get_import_options(path: String, preset_index: int) -> Array[Dictionary]:
-	return []
+	return [] # todo
 
 func _import(source_file: String, save_path: String, options: Dictionary, platform_variants: Array[String], gen_files: Array[String]) -> Error:
 	var anims = AXP.load_anxml(source_file)

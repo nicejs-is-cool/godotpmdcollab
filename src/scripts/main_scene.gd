@@ -26,7 +26,7 @@ func _ready() -> void:
 	animation_player_3.add_animation_library("movement", lib)
 	animation_player_3.play(&"movement/Strike")"""
 	$AnimationPlayer.play("AnimData/Walk")
-	print($AnimationPlayer.get_animation_library("AnimData").get_animation_data(&"Walk"))
+	print($AnimationPlayer.get_animation_library(&"AnimData").get_animation_data(&"Walk"))
 	
 var frame = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
