@@ -1,0 +1,14 @@
+[remap]
+
+importer="pmdcollab.animdata.xml.importer"
+type="SCAnimationLibrary"
+uid="uid://dj83h8sf1g30p"
+path="res://.godot/imported/AnimData.xml-70b25b96482562197bd621a3a66ad7c1.tres"
+
+[deps]
+
+source_file="res://src/assets/pokemon/0001/AnimData.xml"
+dest_files=["res://.godot/imported/AnimData.xml-70b25b96482562197bd621a3a66ad7c1.tres"]
+
+[params]
+

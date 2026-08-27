@@ -1,0 +1,14 @@
+[remap]
+
+importer="pmdcollab.animdata.xml.importer"
+type="AnimationLibrary"
+uid="uid://vyiv5brvm3dl"
+path="res://.godot/imported/AnimData.xml-5cac2fb72a030b2b1f47121458f57b4f.tres"
+
+[deps]
+
+source_file="res://src/assets/AnimData.xml"
+dest_files=["res://.godot/imported/AnimData.xml-5cac2fb72a030b2b1f47121458f57b4f.tres"]
+
+[params]
+

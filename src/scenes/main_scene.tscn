@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bxsc64g0kjmtg" path="res://src/scripts/main_scene.gd" id="1_v8vse"]
 [ext_resource type="PackedScene" uid="uid://cthj5xeavti5w" path="res://src/scenes/character.tscn" id="2_fp51l"]
 [ext_resource type="Texture2D" uid="uid://ckyuy40yfwuac" path="res://src/assets/pokemon/0001/Walk-Anim.png" id="4_v8vse"]
+[ext_resource type="AnimationLibrary" uid="uid://dj83h8sf1g30p" path="res://src/assets/pokemon/0001/AnimData.xml" id="5_mavd3"]
 [ext_resource type="Texture2D" uid="uid://bkbvienn1c5lp" path="res://src/assets/pokemon/0001/Attack-Anim.png" id="5_pxud5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fp51l"]
@@ -40,9 +41,11 @@ texture_filter = 0
 texture = ExtResource("4_v8vse")
 hframes = 6
 vframes = 8
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=992520588]
 root_node = NodePath("../Sprite3D")
+libraries/AnimData = ExtResource("5_mavd3")
 
 [node name="AttackAnim" type="Sprite3D" parent="." unique_id=1192944282]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 3)
