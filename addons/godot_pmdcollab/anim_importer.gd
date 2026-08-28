@@ -14,7 +14,7 @@ func _get_save_extension() -> String:
 	return "tres"
 
 func _get_resource_type() -> String:
-	return "SCAnimationLibrary"
+	return "AnimationLibrary"
 
 func _get_preset_count() -> int:
 	return 1
@@ -29,7 +29,8 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 	var anims = AXP.load_anxml(source_file)
 	if anims == null:
 		return Error.FAILED
-	var lib = SCAnimationLibrary.new()
+	# TODO: spritecollab/shadowsize metadata
+	var lib = AnimationLibrary.new()
 	for animationRaw in anims.animations:
 		var animationData = AXP.get_animation(anims, animationRaw.name)
 		if animationData == null:
@@ -39,5 +40,6 @@ func _import(source_file: String, save_path: String, options: Dictionary, platfo
 		if animationGD == null:
 			printerr("failed to convert animationData to a Godot Animation for %s" % animationData.name)
 			continue
-		lib.add_animation_with_data(animationData.name, animationGD, animationRaw) # todo: err check
+		animationGD.set_meta("spritecollab_data", animationRaw)
+		lib.add_animation(animationData.name, animationGD) # todo: err check
 	return ResourceSaver.save(lib, "%s.%s" % [save_path, _get_save_extension()])

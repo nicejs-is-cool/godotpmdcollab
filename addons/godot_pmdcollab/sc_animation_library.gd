@@ -8,8 +8,7 @@ class_name SCAnimationLibrary
 ### In this case, SpriteCollab data.
 func add_animation_with_data(name: StringName, animation: Animation, data: Dictionary):
 	var errCode: Error = add_animation(name, animation)
-	if errCode == Error.OK:
-		_animation_data[name] = data
+	if errCode == Error.OK:		_animation_data[name] = data
 	return errCode
 
 func remove_animation(name: StringName):

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ckyuy40yfwuac" path="res://src/assets/pokemon/0001/Walk-Anim.png" id="4_v8vse"]
 [ext_resource type="AnimationLibrary" uid="uid://dj83h8sf1g30p" path="res://src/assets/pokemon/0001/AnimData.xml" id="5_mavd3"]
 [ext_resource type="Texture2D" uid="uid://bkbvienn1c5lp" path="res://src/assets/pokemon/0001/Attack-Anim.png" id="5_pxud5"]
+[ext_resource type="Texture2D" uid="uid://dc731k7f7s3dl" path="res://src/assets/pokemon/0001/portrait-0000.png" id="7_pls2c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fp51l"]
 
@@ -18,6 +19,10 @@ sky = SubResource("Sky_0snwi")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v8vse"]
 load_path = "res://.godot/imported/Attack-Anim.png-6d01331b61bdcaa4184a56961e214cef.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ftxi"]
+atlas = ExtResource("7_pls2c")
+region = Rect2(0, 0, 40, 40)
 
 [node name="MainScene" type="Node3D" unique_id=1813772877]
 script = ExtResource("1_v8vse")
@@ -41,7 +46,7 @@ texture_filter = 0
 texture = ExtResource("4_v8vse")
 hframes = 6
 vframes = 8
-frame = 2
+frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=992520588]
 root_node = NodePath("../Sprite3D")
@@ -66,3 +71,13 @@ vframes = 8
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="." unique_id=484434745]
 root_node = NodePath("../StrikeAnim")
+
+[node name="AtlasTest" type="Sprite3D" parent="." unique_id=801646166]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2, 2)
+texture_filter = 0
+texture = SubResource("AtlasTexture_2ftxi")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=618995784]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2, 3, 2)
+texture_filter = 0
+texture = ExtResource("7_pls2c")

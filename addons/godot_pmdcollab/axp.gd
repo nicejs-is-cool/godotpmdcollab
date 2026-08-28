@@ -143,6 +143,7 @@ static func animation_to_gd(anim: Dictionary):
 				})
 		#animation.track_set_key_transition(track_idx, key_idx, 1.0)
 		frames += 1
+	animation.set_meta("spritecollab_fulldata", anim)
 	return animation
 static func _find_animation(dict: Dictionary, name: StringName):
 	for anim in dict.animations:

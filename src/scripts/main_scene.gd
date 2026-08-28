@@ -3,6 +3,8 @@ extends Node3D
 @onready var animation_player_3: AnimationPlayer = $AnimationPlayer3
 var animlib = preload("res://src/assets/pokemon/0001/AnimData.xml")
 
+var ind: int = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#var axp = AXP.new()
@@ -26,7 +28,14 @@ func _ready() -> void:
 	animation_player_3.add_animation_library("movement", lib)
 	animation_player_3.play(&"movement/Strike")"""
 	$AnimationPlayer.play("AnimData/Walk")
-	print($AnimationPlayer.get_animation_library(&"AnimData").get_animation_data(&"Walk"))
+	print($AnimationPlayer.get_animation_library(&"AnimData").get_animation(&"Walk").get_meta("spritecollab_data"))
+	var atlast: AtlasTexture = $AtlasTest.texture
+	print(SpriteCollab.vec2i_to_index(SpriteCollab.ASYMMETRICAL_PORTRAITS_START))
+	var por = SpriteCollab.asym_portrait(SpriteCollab.PortraitIndex.DETERMINED)
+	print(por)
+	var dim = SpriteCollab.get_portrait_dimensions(por)
+	print(dim)
+	atlast.region = dim
 	
 var frame = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,6 +46,11 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("arrow_right"):
 		$Sprite3D.frame_coords.y = ($Sprite3D.frame_coords.y + 1) % 8
 		$AttackAnim.frame_coords.y = ($AttackAnim.frame_coords.y + 1) % 8
+		ind = (ind+1)%40
+		#var atlast: AtlasTexture = $AtlasTest.texture
+		#var dim = SpriteCollab.get_portrait_dimensions(ind)
+		#print(ind, dim)
+		#atlast.region = dim
 		
 	if Input.is_action_pressed("arrow_left"):
 		$Sprite3D.frame_coords.y = ($Sprite3D.frame_coords.y - 1) % 8
