@@ -33,7 +33,8 @@ enum SpriteDirection {
 	NORTHEAST,
 	NORTH,
 	NORTHWEST,
-	WEST
+	WEST,
+	SOUTHWEST
 }
 
 func vec2i_to_index(vec: Vector2i) -> int:
